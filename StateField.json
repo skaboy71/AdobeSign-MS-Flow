@@ -1,0 +1,167 @@
+{
+  "$schema": "http://columnformatting.sharepointpnp.com/columnFormattingSchema.json",
+  "elmType": "div",
+  "attributes": {
+    "class": {
+      "operator": "?",
+      "operands": [
+        {
+          "operator": "==",
+          "operands": [
+            {
+              "operator": "toString()",
+              "operands": [
+                "@currentField"
+              ]
+            },
+            "Completed"
+          ]
+        },
+        "sp-field-severity--good",
+        {
+          "operator": "?",
+          "operands": [
+            {
+              "operator": "==",
+              "operands": [
+                {
+                  "operator": "toString()",
+                  "operands": [
+                    "@currentField"
+                  ]
+                },
+                "In Process"
+              ]
+            },
+            "sp-field-severity--low",
+            {
+              "operator": "?",
+              "operands": [
+                {
+                  "operator": "==",
+                  "operands": [
+                    {
+                      "operator": "toString()",
+                      "operands": [
+                        "@currentField"
+                      ]
+                    },
+                    "Waiting for Sign Completion"
+                  ]
+                },
+                "sp-field-severity--warning",
+                {
+                  "operator": "?",
+                  "operands": [
+                    {
+                      "operator": "==",
+                      "operands": [
+                        {
+                          "operator": "toString()",
+                          "operands": [
+                            "@currentField"
+                          ]
+                        },
+                        "Draft"
+                      ]
+                    },
+                    "sp-field-severity--severeWarning",
+                    "sp-field-severity--blocked"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "style": {
+        "display": "inline-block",
+        "padding": "0 4px"
+      },
+      "attributes": {
+        "iconName": {
+          "operator": "?",
+          "operands": [
+            {
+              "operator": "==",
+              "operands": [
+                {
+                  "operator": "toString()",
+                  "operands": [
+                    "@currentField"
+                  ]
+                },
+                "Completed"
+              ]
+            },
+            "CheckMark",
+            {
+              "operator": "?",
+              "operands": [
+                {
+                  "operator": "==",
+                  "operands": [
+                    {
+                      "operator": "toString()",
+                      "operands": [
+                        "@currentField"
+                      ]
+                    },
+                    "In Process"
+                  ]
+                },
+                "Forward",
+                {
+                  "operator": "?",
+                  "operands": [
+                    {
+                      "operator": "==",
+                      "operands": [
+                        {
+                          "operator": "toString()",
+                          "operands": [
+                            "@currentField"
+                          ]
+                        },
+                        "Waiting for Sign Completion"
+                      ]
+                    },
+                    "Error",
+                    {
+                      "operator": "?",
+                      "operands": [
+                        {
+                          "operator": "==",
+                          "operands": [
+                            {
+                              "operator": "toString()",
+                              "operands": [
+                                "@currentField"
+                              ]
+                            },
+                            "Draft"
+                          ]
+                        },
+                        "Warning",
+                        "ErrorBadge"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elmType": "span",
+      "txtContent": "@currentField"
+    }
+  ]
+}

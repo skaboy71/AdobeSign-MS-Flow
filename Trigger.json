@@ -1,0 +1,41 @@
+{
+  "$schema": "http://columnformatting.sharepointpnp.com/columnFormattingSchema.json",
+  "elmType": "span",
+  "style": {
+    "color": "#0078d7"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "Flow"
+      }
+    },
+    {
+      "elmType": "button",
+      "txtContent": "Get Sign Link",
+      "customRowAction": {
+        "action": "executeFlow",
+        "actionParams": "{\"id\": \"af7881b6-208f-48b7-80eb-63c1e3bd500f\"}"
+      },
+      "style": {
+        "background-color": "purple",
+        "color": "white",
+        "visibility": {
+          "operator": "?",
+          "operands": [
+            {
+              "operator": "==",
+              "operands": [
+                "[$DraftState]",
+                "Sign"
+              ]
+            },
+            "visible",
+            "hidden"
+          ]
+        }
+      }
+    }
+  ]
+}
